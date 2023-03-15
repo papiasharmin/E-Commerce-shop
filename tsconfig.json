@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -19,6 +19,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "store/store.ts", "pages/api/auth/[...nextauth].js", "pages/api/auth/account.js", "pages/api/auth/signup.js", "pages/api/filter/[...filterpath].js", "pages/api/cart/getcart.js", "pages/cart.tsx", "helper.js"],
   "exclude": ["node_modules"]
 }
