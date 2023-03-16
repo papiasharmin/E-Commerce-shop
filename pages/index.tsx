@@ -59,7 +59,7 @@ export const getStaticProps = async() =>{
        
     return {
       props: {
-         allpro:JSON.stringify(allpro)
+         allpro:JSON.stringify(allpro ? allpro : {})
        
       }, // will be passed to the page component as props
     }

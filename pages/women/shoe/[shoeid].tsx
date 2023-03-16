@@ -44,6 +44,7 @@ export const getStaticProps: GetStaticProps= async(context) =>{
 
   
   return {
-       props: {shoe:JSON.stringify(shoe)}
+       props: {shoe:JSON.stringify(shoe ? shoe : {})},
+       revalidate: 24*60*60,
   }
 }

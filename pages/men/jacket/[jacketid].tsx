@@ -45,6 +45,7 @@ export const getStaticProps: GetStaticProps= async(context) =>{
   const jacket = await db.collection("jacket").findOne({gender:'male',name:context.params?.jacketid});
   
   return {
-       props: {jacket:JSON.stringify(jacket)}
+       props: {jacket:JSON.stringify(jacket ? jacket : {})},
+       revalidate: 24*60*60,
   }
 }

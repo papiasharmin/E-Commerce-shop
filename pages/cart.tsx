@@ -38,7 +38,7 @@ export const getServerSideProps: GetServerSideProps = async({req,res}) =>{
 
 return {
 props: {
-  allpro:JSON.stringify(allpro),
+  allpro:JSON.stringify(allpro ? allpro : []),
 },
 }
 }

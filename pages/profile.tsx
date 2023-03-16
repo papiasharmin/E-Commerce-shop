@@ -132,7 +132,7 @@ export const getServerSideProps: GetServerSideProps= async({req,res}) =>{
   const userdetail = await db.collection("userdetail").findOne({email:session?.email});
   
   return {
-       props: {userdetail:JSON.stringify(userdetail)}
+       props: {userdetail:JSON.stringify(userdetail ? userdetail : {})}
   }
 }
 

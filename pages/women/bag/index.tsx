@@ -70,6 +70,6 @@ export const getStaticProps = async() =>{
   
   
 return {
-  props: {allbags:JSON.stringify(allbags)}, 
+  props: {allbags:JSON.stringify(allbags ? allbags : [])}, 
 }
 }

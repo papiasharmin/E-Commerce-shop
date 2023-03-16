@@ -68,8 +68,7 @@ export const getStaticProps = async() =>{
   const allnew = [...newshoes,...newbags,...newjackets]
   
 return {
-props: {allnew:JSON.stringify(allnew)}, // will be passed to the page component as props
+props: {allnew:JSON.stringify(allnew ? allnew : [])}, // will be passed to the page component as props
 }
 }
 
-// <Filter  product={`${router.pathname.split('/')[1]}`} handelprice={handelpricefilter} handelreview={handelreviewfilter} />

@@ -90,6 +90,6 @@ export const getStaticProps = async() =>{
   
   
 return {
-props: {alljackets:JSON.stringify(alljackets)}, 
+props: {alljackets:JSON.stringify(alljackets ? alljackets : [])}, 
 }
 }

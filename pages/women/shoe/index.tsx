@@ -82,6 +82,6 @@ export const getStaticProps = async() =>{
   const allshoes = await db.collection("shoe").find({gender:'female'}).project({img:1,name:1,price:1,size:1,totalrating:1,_id:0}).toArray();
   
 return {
-props: {allshoes:JSON.stringify(allshoes)}, 
+props: {allshoes:JSON.stringify(allshoes ? allshoes : [])}, 
 }
 }
