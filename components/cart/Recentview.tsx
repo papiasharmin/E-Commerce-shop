@@ -6,7 +6,7 @@ const Recentview: React.FC<{product:[]}> = (props) => {
   
   let product = props.product.map( (item:{gender:string;name:string;img:{imgads:string[]}[]},index:number) => 
 
-  <Link href={`${item.gender == 'male' ? 'men' : 'women'}/${index >=0 && index <=1? 'jacket' : index >=2 && index <=3? 'bag' : 'shoe'}/${item.name}`}>
+  <Link key={index} href={`${item.gender == 'male' ? 'men' : 'women'}/${index >=0 && index <=1? 'jacket' : index >=2 && index <=3? 'bag' : 'shoe'}/${item.name}`}>
     <Image className='p-2 w-[200px] h-[200px] backdrop-blur-md' src={item.img[0].imgads[0]} alt='' width={200} height={200}/>
   </Link>
 

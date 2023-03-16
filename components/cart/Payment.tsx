@@ -11,26 +11,21 @@ const Payment: React.FC<{handelsubmit:(e:FormEvent<HTMLFormElement>)=>void;showm
 
     if (status === "loading") {
         return <p>Loading...</p>
-      }
-      if (status === "unauthenticated") {
+    }else if (status === "unauthenticated") {
         router.push(`/login`)
-      }
+    };
 
+    async function userdetail(){
+      let res = await fetch('/api/auth/account');
+      let userdata = await  res.json()
+      setuserdata(userdata)
+    };
 
-      useEffect(()=>{
-        async function userdetail(){
-            let res = await fetch('/api/auth/account');
+    useEffect(()=>{
+      userdetail()
+    },[]);
 
-            let userdata = await  res.json()
-            setuserdata(userdata)
-        }
-
-        userdetail()
-        
-      },[])
-      useEffect(()=>{
-       
-      },[userdata])
+    useEffect(()=>{},[userdata])
   return (
     <div className='col-span-4'>
 

@@ -73,12 +73,12 @@ const Navbar: React.FC<{}>= () => {
     <>
     <div   className={`fixed z-10 w-full hover:bg-slate-100 text-slate-800 ${navcolor ? 'bg-slate-200' : ''}`}>
         <nav className='flex flex-col justify-center md:flex-row parent md:justify-between center-center p-4 bg-transparent text-slate-800 hover:text-slate-800 font-sans'>
-            <Link href={`/`} className='relative text-2xl font-semibold flex justify-center items-center'><img className='w-[70px] h-[35px]' src='/image/logo1.png'/>𝑅𝐸𝐿𝐼𝒜𝒩𝒞𝐸</Link>
+            <Link href={`/`} className='relative text-2xl font-semibold flex justify-center items-center'><Image alt='' className='w-[70px] h-[35px]' src='/image/logo1.png'/>𝑅𝐸𝐿𝐼𝒜𝒩𝒞𝐸</Link>
             
             <ul className='flex items-center '>
                 <li className='px-2'onMouseEnter={handelMouseenter} onMouseLeave={handelMouseleave} >Women</li>
                 <li className='px-2' onMouseEnter={handelMouseenter} onMouseLeave={handelMouseleave}>Men</li>
-                <li className='px-2'><Link href={`/whatsnew`}>What's New</Link></li>
+                <li className='px-2'><Link href={`/whatsnew`}>New Arrivals</Link></li>
                 <li className='px-2'><Link href={`/sale`}>Sale</Link></li>
             </ul>
 
@@ -102,8 +102,8 @@ const Navbar: React.FC<{}>= () => {
     {(show === 'Women' || show === 'Men') && <Tooltip routeid={show.split('')[0].toLocaleLowerCase()+show.slice(1)} onmouseenter={handeltooltipenter} onmouseleave={handeltooltipleave}/>}
     {(show  === 'Account' ) && <Acctooltip onmouseenter={handeltooltipenter} onmouseleave={handeltooltipleave} />}
     {router.pathname !== '/cart' && showcart && <div className='z-20 fixed top-[145px] md:top-[70px] right-0 w-full md:w-1/4 h-auto p-2 bg-slate-50'>
-      {items.map((item:any) =>
-         <div className='flex justify-center items-center gap-2 border-[1px] mb-2'>
+      {items.map((item:any,index:number) =>
+         <div key={index} className='flex justify-center items-center gap-2 border-[1px] mb-2'>
           <div>
             <Image className='w-[100px] h-[100px]' src={`${item.img}`} alt='' width={100} height={100}/>
           </div>

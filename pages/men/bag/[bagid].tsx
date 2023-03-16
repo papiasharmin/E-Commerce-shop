@@ -31,7 +31,7 @@ export default BagDetail
 export const getStaticPaths: GetStaticPaths= async()=> {
   return {
     paths: [{ params: { bagid: "men leather shoulder bag luxary" } }, { params: { bagid: "men leather shoulder bag elegant" } }],
-    fallback: 'blocking', // can also be true or 'blocking'
+    fallback: 'blocking', 
   }
 }
 

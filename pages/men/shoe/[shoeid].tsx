@@ -31,7 +31,7 @@ export default ShoeDetail
 export const getStaticPaths: GetStaticPaths= async()=> {
   return {
     paths: [{ params: { shoeid: "men leather suede shoe  elegant" } }, { params: { shoeid: "men leather nubuck shoe luxary" } }],
-    fallback: 'blocking', // can also be true or 'blocking'
+    fallback: 'blocking', 
   }
 }
 
@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps= async(context) =>{
   const db = client.db("products");
   const shoe = await db.collection("shoe").findOne({gender:'male',name:context.params?.shoeid});
 
-  console.log(shoe)
+ 
   
   return {
        props: {shoe:JSON.stringify(shoe)}

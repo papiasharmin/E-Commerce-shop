@@ -1,6 +1,7 @@
 import React from 'react';
 import clientPromise from '@/lib/mongodb';
 import Displaysec from '@/components/ui/mainpage/Displaysec';
+import Image from 'next/image';
 
 const HomePage: React.FC<{allpro:string}> = (props) => {
 
@@ -15,9 +16,9 @@ const HomePage: React.FC<{allpro:string}> = (props) => {
                  <p>Buy from leather shop, be cool</p>
                  <p>Amazing Clothing</p>
               </div>
-              <img className='absolute top-[100px] left-[100px] lg:left-[200px] drop-shadow-2xl w-[100px] h-[150px] lg:w-[200px] lg:h-[250px] animate-movedown' src={'https://i.pinimg.com/736x/b2/20/b7/b220b75ea62cb2e1d765d70cd3e32940--classy-couple-couple-style.jpg'}/>
-              <img className='absolute top-[250px] left-[35px] lg:left-[75px] drop-shadow-2xl w-[100px] h-[150px] lg:w-[200px] lg:h-[250px]  animate-moveleft' src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtt_v4YM51m2ys69bdwSvS5_cVAE5JvTXE-Q&usqp=CAU'}/>
-              <img className='absolute top-[250px] left-[175px] lg:left-[350px] drop-shadow-2xl w-[100px] h-[150px] lg:w-[200px] lg:h-[250px]   animate-moveright' src={'https://www.colonellittleton.com/wp-content/uploads/2023/01/category-image-alligator-jan2023.jpg'}/>
+              <Image alt='' className='absolute top-[100px] left-[100px] lg:left-[200px] drop-shadow-2xl w-[100px] h-[150px] lg:w-[200px] lg:h-[250px] animate-movedown' src={'https://i.pinimg.com/736x/b2/20/b7/b220b75ea62cb2e1d765d70cd3e32940--classy-couple-couple-style.jpg'}/>
+              <Image alt='' className='absolute top-[250px] left-[35px] lg:left-[75px] drop-shadow-2xl w-[100px] h-[150px] lg:w-[200px] lg:h-[250px]  animate-moveleft' src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtt_v4YM51m2ys69bdwSvS5_cVAE5JvTXE-Q&usqp=CAU'}/>
+              <Image alt='' className='absolute top-[250px] left-[175px] lg:left-[350px] drop-shadow-2xl w-[100px] h-[150px] lg:w-[200px] lg:h-[250px]   animate-moveright' src={'https://www.colonellittleton.com/wp-content/uploads/2023/01/category-image-alligator-jan2023.jpg'}/>
               
             </div>
 

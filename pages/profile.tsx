@@ -55,7 +55,7 @@ const Account: React.FC<{userdetail:string}> = (props) => {
    
   }
 
-  let orders = detail.orderlist.map((item:any) => <div className='flex flex-col '>
+  let orders = detail.orderlist.map((item:any,index:number) => <div key={index} className='flex flex-col '>
     <p className='bg-slate-100 p-2 w-wull flex '>
     <span>{`${(new Date(item.date)).toLocaleDateString()}`}</span>
     <span onClick={handeldispaly}>
@@ -67,7 +67,7 @@ const Account: React.FC<{userdetail:string}> = (props) => {
     <div className='hidden p-4 text-sm'>
       <ul className='flex flex-col'>
       
-        {item.list.map((item:any,index:number) => <li className='flex justify-between items-center border-b-2 p-2'><span>{`${item.name}`}</span><span>{`${item.size} ${item.color}`}</span><span>{`${item.price} X ${item.quantity} = ${item.totalprice}`}</span></li>)}
+        {item.list.map((item:any,index:number) => <li key={index} className='flex justify-between items-center border-b-2 p-2'><span>{`${item.name}`}</span><span>{`${item.size} ${item.color}`}</span><span>{`${item.price} X ${item.quantity} = ${item.totalprice}`}</span></li>)}
         <li className='self-end'>{`Total = ${item.total}`}</li>
       </ul>
     

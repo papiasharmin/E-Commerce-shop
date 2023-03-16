@@ -44,6 +44,7 @@ const Allitem: React.FC<{product:[]}>= (props) => {
 
   function handelcheckout(){
     if(session){
+      
       setshow(true)
       localStorage.setItem('payment',JSON.stringify(true))
     }else{
@@ -55,15 +56,15 @@ const Allitem: React.FC<{product:[]}>= (props) => {
     setshowmodal(false) 
  }
 
- const allitems =allitem.map((item:cartitem) => {  
-  return <Item color={item.color}itemleft={item.itemleft} link={item.link} name={item.name}id={item.name}img={item.img} price={item.price} quantity={item.quantity} size={item.size} totalprice={item.totalprice}/>
+ const allitems =allitem.map((item:cartitem,index:number) => {  
+  return <Item key={index} color={item.color}itemleft={item.itemleft} link={item.link} name={item.name}id={item.name}img={item.img} price={item.price} quantity={item.quantity} size={item.size} totalprice={item.totalprice}/>
 })
 
   return (
     <div className='grid grid-cols-12 w-full h-full pt-40 md:pt-20 gap-4 px-6'>
           {showmodal && <div className='absolute top-0 left-0 col-span-12 w-full h-full backdrop-blur-md flex justify-center items-center p-4 text-2xl font-semibold text-slate-600 text-center z-20'>
         <div className='border-2 border-slate-300 p-6 flex flex-col w-2/4 h-2/4 bg-slate-300 justify-center items-center cu'>
-        <span>Your Order Is Confirmed.</span> <span>Thank's For Shopping From Reliance Leather</span>
+        <span>Your Order Is Confirmed.</span> <span>Thank you For Shopping From Reliance Leather</span>
         <span onClick={closemodal}className='text-2xl font-semibold border-2 p-2 cursor-pointer'>X</span>
         </div>
       </div>

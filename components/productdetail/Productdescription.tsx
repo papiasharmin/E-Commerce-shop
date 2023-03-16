@@ -102,7 +102,7 @@ const Productdescription: React.FC<{img:{color:string;imgads:string[]};selectimg
   },[quantity])
   
   
-  const color = props.colors.map(item => <div className='flex gap-2 items-center'><input id={item} onChange={selectcolor} className='' type='radio' name='color' value={item}/><label htmlFor={item}>{item}</label></div>)
+  const color = props.colors.map((item,index) => <div key={index} className='flex gap-2 items-center'><input id={item} onChange={selectcolor} className='' type='radio' name='color' value={item}/><label htmlFor={item}>{item}</label></div>)
   
   return (
     <div className='col-span-12 md:col-span-4 md:col-start-8 md:col-end-12  px-6 flex flex-col gap-2'>

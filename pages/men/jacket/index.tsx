@@ -63,7 +63,7 @@ function handelreviewfilter(e:ChangeEvent<HTMLInputElement>){
     <div className='grid grid-col-12 w-[100%]'>
       <Allitembanner routeid={router.pathname}/>
       <div className='grid grid-cols-12'>
-         <Filter  product={`${router.pathname.split('/')[2]}`} handelcatagory={handelcatagoryfilter} handelsize = {handelsizefilter} handelprice={handelpricefilter} handelreview={handelreviewfilter} size={product[0].size}/>{isloading == false? <Allitems product={product}/> : <p>LODING</p>}
+         <Filter  product={`${router.pathname.split('/')[2]}`} handelcatagory={handelcatagoryfilter} handelsize = {handelsizefilter} handelprice={handelpricefilter} handelreview={handelreviewfilter} />{isloading == false? <Allitems product={product}/> : <p>LODING</p>}
       </div>
     </div>
   )

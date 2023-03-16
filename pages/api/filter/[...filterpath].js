@@ -47,7 +47,7 @@ export default async function handler(req,res) {
       
       const dbname = req.query.filterpath?.[1].toLocaleLowerCase() 
       const product = await db.collection(dbname ? dbname : '').find(query).toArray()
-      console.log(product)
+      
       res.json(product);
     }else{
       const jacket = await db.collection('jacket').find(query).toArray()

@@ -33,7 +33,7 @@ export default JacketDetail
 export const getStaticPaths: GetStaticPaths= async()=> {
   return {
     paths: [{ params: { jacketid: "women bulky faux leather bomber jacket" } }, { params: { jacketid: "women furry faux leather cool jacket" } }],
-    fallback: 'blocking', // can also be true or 'blocking'
+    fallback: 'blocking', 
   }
 }
 
