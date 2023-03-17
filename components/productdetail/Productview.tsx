@@ -8,9 +8,10 @@ const Productview:React.FC<{img:{color:string;imgads:string[]}}> = (props) => {
   useEffect(()=>{setmainimg(props.img.imgads[0])},[props.img.color])
   
   function changeimg(e: MouseEvent<HTMLImageElement>){
+    console.log(mainimg)
        setmainimg(e.currentTarget.src)
   }
-  
+  useEffect(()=>{},[mainimg])
   return (
     <div className='col-span-12 md:col-span-6 md:col-start-2 md:col-end-8 grid grid-cols-12 gap-4 h-[550px] overflow-auto pb-10 pl-4'>
         <div className='col-span-3 flex flex-col gap-4 pt-4'>
