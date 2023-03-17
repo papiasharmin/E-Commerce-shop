@@ -13,6 +13,7 @@ const Navbar: React.FC<{}>= () => {
   const [navcolor,setnavcolor] = useState(false)
   const [ontooltip,setontooltip] = useState(false)
   let [time,settime] = useState<NodeJS.Timeout>();
+  const [navshowlg, setnavshowlg] = useState<boolean>(false);
   const items:{id:string;quantity:number;totalprice:number}[] = useSelector((state:{cart:{cart:[]}})=> state.cart.cart);
   const [totalitem,settotalitem] = useState(0)
   const router = useRouter()
@@ -64,17 +65,17 @@ const Navbar: React.FC<{}>= () => {
     }
   },[ontooltip,show])
 
+  function togglenav(){
+    setnavshowlg(prev=> !prev)
+  }
+
   useEffect(() => {
     window.addEventListener("scroll", handelscroll, true);
     return () => window.removeEventListener("scroll", handelscroll);
+    
   }, []);
 
-  return (
-    <>
-    <div   className={`fixed z-10 w-full hover:bg-slate-100 text-slate-800 ${navcolor ? 'bg-slate-200' : ''}`}>
-        <nav className='flex flex-col justify-center md:flex-row parent md:justify-between center-center p-4 bg-transparent text-slate-800 hover:text-slate-800 font-sans'>
-            <Link href={`/`} className='relative text-2xl font-semibold flex justify-center items-center'><Image alt='' className='w-[70px] h-[35px]' src='/image/logo1.png'/>𝑅𝐸𝐿𝐼𝒜𝒩𝒞𝐸</Link>
-            
+  const navigator = <>
             <ul className='flex items-center '>
                 <li className='px-2'onMouseEnter={handelMouseenter} onMouseLeave={handelMouseleave} >Women</li>
                 <li className='px-2' onMouseEnter={handelMouseenter} onMouseLeave={handelMouseleave}>Men</li>
@@ -82,8 +83,8 @@ const Navbar: React.FC<{}>= () => {
                 <li className='px-2'><Link href={`/sale`}>Sale</Link></li>
             </ul>
 
-            <div className='flex flex-col-reverse md:flex-row'>
-              <input className='bg-transparent border-[1px] rounded-md border-slate-200 px-4' type={'text'} placeholder='search' />
+            <div className='flex '>
+             
               <ul className='flex items-center self-end py-2'>   
                 <li className='px-2' onMouseEnter={handelMouseenter} onMouseLeave={handelMouseleave}>Account</li>
                 <li className='flex justify-center items-center px-2'>
@@ -96,6 +97,24 @@ const Navbar: React.FC<{}>= () => {
                 </li>               
               </ul>
             </div>
+  </>
+
+  return (
+    <>
+    <div   className={`fixed z-10 w-full hover:bg-slate-100 text-slate-800 ${navcolor ? 'bg-slate-200' : ''}`}>
+        <nav className='flex justify-evenly items-center md:flex-row parent md:justify-between center-center p-4 bg-transparent text-slate-800 hover:text-slate-800 font-sans'>
+            <Link href={`/`} className='relative text-2xl font-semibold flex justify-center items-center'><Image alt='' className='w-[70px] h-[35px]' src='/image/logo1.png' width={100} height={100}/>𝑅𝐸𝐿𝐼𝒜𝒩𝒞𝐸</Link>
+            <div className='hidden md:flex'>
+              {navigator}
+            </div>
+            <div className='block md:hidden' onClick={togglenav}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+
+            </div>
+            {navshowlg && <div className='flex justify-around w-full top-16 left-0 absolute bg-slate-50 border-gray-800 drop-shadow-lg '>{navigator}</div>}
+
 
         </nav>       
     </div>
@@ -122,4 +141,6 @@ const Navbar: React.FC<{}>= () => {
 }
 
 export default Navbar
+
+// <input className='bg-transparent border-[1px] rounded-md border-slate-200 px-4' type={'text'} placeholder='search' />
 

@@ -26,7 +26,8 @@ const Allreview: React.FC<{dbname:string;prorductname:string,review:{comment:str
     e.preventDefault()
     if(reviewref.current?.value !== ''){
 
-      setreview(reviewref.current!.value);
+      //setreview(reviewref.current!.value);
+     
 
       const res = await fetch(`/api/review/${props.dbname}/${props.prorductname}`,{
         method:'POST',
@@ -41,18 +42,17 @@ const Allreview: React.FC<{dbname:string;prorductname:string,review:{comment:str
         })
       })
       let data = await res.json()
-      console.log(data)
+      
       setallreview(data)
      }
   }
-  let allreviewele
+  
   useEffect(()=>{
-     
-    console.log(`HELLOO`) 
-  },[allreview])
+  },[allreview]);
 
+  let allreviewele
   allreviewele = allreview?.map(item => <Customerreview key={item.comment} review={item}/>);
-  console.log(`HELLOOENDDDD`) 
+  
   let reviewform = <>
       {!allow &&<><button className='rounded-md bg-slate-200 drop-shadow-md p-2' onClick={checksession}>Add Customer Review</button></>}
       {allow && 

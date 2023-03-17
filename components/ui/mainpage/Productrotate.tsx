@@ -24,7 +24,7 @@ const Productrotate:React.FC<{gender:string;imgads:string[];stopscroll:number}> 
        
       <div className='hidden md:flex  border-2 p-2 border-slate-300 h-full w-2/4 justify-center items-center self-start bg-no-repeat bg-cover bg-center'>
         <div className='absolute top-0 left-0 w-full h-full backdrop-blur-sm'></div>
-        <Image src={`/image/${props.gender == 'male'?'mainpagebg2.jpeg':'mainpagebg1.jpg'}`} alt='' className='h-full w-full '/>
+        <Image src={`/image/${props.gender == 'male'?'mainpagebg2.jpeg':'mainpagebg1.jpg'}`} alt='' className='h-full w-full ' width={100} height={100}/>
         <div className='absolute left-1/4 top-7 w-2/4 text-2xl text-center text-slate-600 z-1 '>
           <p className='font-semibold'><span className='text-slate-700 text-3xl font-semibold'>𝑅𝐸𝐿𝐼𝒜𝒩𝒞𝐸 𝐿𝐸𝒜𝒯𝐻𝐸𝑅...</span> A Trusted Brand.</p>
           <p>Buy leather wear,</p><p>quality and comfort ensured</p>

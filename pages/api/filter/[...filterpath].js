@@ -42,7 +42,7 @@ export default async function handler(req,res) {
  
     const client = await clientPromise
     const db =  client.db('products');
-
+    console.log(query)
     if(path !== 'sale' && path !== 'whatsnew'){
       
       const dbname = req.query.filterpath?.[1].toLocaleLowerCase() 

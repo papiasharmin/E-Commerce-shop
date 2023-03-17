@@ -55,7 +55,7 @@ const Account: React.FC<{userdetail:string}> = (props) => {
    
   }
 
-  let orders = detail.orderlist.map((item:any,index:number) => <div key={index} className='flex flex-col '>
+  let orders = detail?.orderlist?.map((item:any,index:number) => <div key={index} className='flex flex-col '>
     <p className='bg-slate-100 p-2 w-wull flex '>
     <span>{`${(new Date(item.date)).toLocaleDateString()}`}</span>
     <span onClick={handeldispaly}>
@@ -76,8 +76,8 @@ const Account: React.FC<{userdetail:string}> = (props) => {
 
   return (
     
-      <div className='grid grid-cols-12 p-[100px] w-full h-auto gap-6 '> 
-        <div className='p-2 col-span-7 flex flex-col gap-4'>
+      <div className='grid grid-cols-12 pt-[100px] px-10 w-full h-auto gap-6 '> 
+        <div className='p-2 col-span-12 md:col-span-7 flex flex-col gap-4'>
 
           <div className='flex flex-col gap-2 border-2 border-slate-100 '>
           <p className='bg-slate-100 p-2'>Profile Detail</p>
@@ -94,7 +94,7 @@ const Account: React.FC<{userdetail:string}> = (props) => {
             {orders}
           </div>
         </div>
-        <div className='col-span-5 h-3/4 bg-slate-200 drop-shadow flex flex-col justify-center items-center'>
+        <div className='col-span-12 md:col-span-5 h-3/4 bg-slate-200 drop-shadow flex flex-col justify-center items-center'>
 
           <form onSubmit={handelsubmit} className='flex flex-col justify-start mt-6 w-2/4'>
             <label className='text-sm' htmlFor='name'>Name</label>
