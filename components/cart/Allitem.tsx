@@ -59,6 +59,7 @@ const Allitem: React.FC<{product:[]}>= (props) => {
  const allitems =allitem.map((item:cartitem,index:number) => {  
   return <Item key={index} color={item.color}itemleft={item.itemleft} link={item.link} name={item.name}id={item.name}img={item.img} price={item.price} quantity={item.quantity} size={item.size} totalprice={item.totalprice}/>
 })
+console.log(props.product)
 
   return (
     <div className='grid grid-cols-12 w-full h-full pt-40 md:pt-20 gap-4 px-6'>

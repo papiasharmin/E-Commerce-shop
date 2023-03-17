@@ -14,7 +14,7 @@ const Allfilter :React.FC<filter>= (props) => {
   let catagory = props.product == 'jacket' ? ['faux leather','long coat','biker','bomber'] : props.product == 'bag' ? ['shoulder','crossbody','tote','wallet']: ['nubuck','calfskin','suede','chamois']
   let size = props.product == 'jacket' ? ['XS','S','M','L','XL'] : ['24','24.5','25','25.5','26','26.5','27','27.5']
   return (
-    <div className='col-span-12 w-full md:col-span-3 flex flex-row md:flex-col px-2 md:px-10 py-8 gap-6 md:gap-10 text-xm md:text-base bg-slate-50'>  
+    <div className='col-span-12 w-full md:col-span-3 flex flex-row flex-wrap md:flex-col px-2 md:px-10 py-8 gap-6 md:gap-10 text-xm md:text-base bg-slate-50'>  
         
         {props.product !== 'sale' && props.product !== 'whatsnew' ? <Filter key={1} field={`Select catagory`} value={catagory} name={`jac`} type={'checkbox'} handelchange={props.handelcatagory!}/> : ''}
         {props.product !== 'bag' && props.product !== 'sale' && props.product !== 'whatsnew' ? <Filter key={4} field={`Select size`} value={size} name={`size`} type={'checkbox'} handelchange={props.handelsize!}/> : ''}        

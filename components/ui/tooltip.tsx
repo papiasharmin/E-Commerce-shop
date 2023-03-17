@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 const Tooltip :React.FC<{routeid:string, onmouseenter:()=>void,onmouseleave:()=>void}>= (props) => {
 return (
-    <div className='flex gap-6 items-center fixed  top-[145px] md:top-[61.5px] md:left-1/4 w-full md:w-[25%] h-auto p-2 bg-slate-50 drop-shadow-xl z-40' onMouseEnter={props.onmouseenter} onMouseLeave={props.onmouseleave}>
+    <div className='flex gap-6 items-center fixed  top-[145px] md:top-[61.5px] md:left-1/4 w-full md:w-auto h-auto p-2 bg-slate-50 drop-shadow-xl z-40' onMouseEnter={props.onmouseenter} onMouseLeave={props.onmouseleave}>
         <Image src={props.routeid == 'women'?`/image/mainpagebg1.jpg` : `/image/mainpagebg2.jpg`} alt='' width={100} height={100}/>
         <ul className='flex'>
             <li className='flex py-2 gap-2'>
