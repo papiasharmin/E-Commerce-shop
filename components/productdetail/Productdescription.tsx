@@ -19,7 +19,7 @@ const Productdescription: React.FC<{img:{color:string;imgads:string[]};selectimg
   const total = useSelector((state:{cart:{totalamount:number}})=> state.cart.totalamount);
   const dispatch = useDispatch();
   const router = useRouter();
-  
+  console.log(props.quantity)
   let path= (router.pathname.split('/').slice(0,3));
   path[4] = props.name;
   let link = path.join('/');

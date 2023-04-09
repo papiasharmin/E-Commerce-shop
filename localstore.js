@@ -1,8 +1,14 @@
 export const loadState = () => {
     try {
-      const serialState = localStorage.getItem('localcart');
+      let serialState = localStorage.getItem('localcart');
       if (serialState === null) {
         return undefined;
+      }else{
+        const localcart = JSON.parse(localStorage.getItem('localcart'))
+        if(localcart.cart.length == 0){
+          return undefined
+        }
+
       }
       return JSON.parse(serialState);
     } catch (err) {
