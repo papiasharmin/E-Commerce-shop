@@ -23,7 +23,7 @@ const HomePage: React.FC<{allpro:string}> = (props) => {
             </div>
 
             <div className='overflow-clip relative -top-24 w-full md:w-2/4 h-[800px]'>
-                <video className=' h-[1000px] shadow-md shadow-slate-100 w-[800px] ' preload='auto' muted autoPlay loop src='/video/vid1.mp4'/>
+                <video className=' h-[1000px] shadow-md shadow-slate-100 w-[800px] ' preload='auto' poster='/image/mainpageland1.jpg' muted autoPlay loop src='/video/vid1.mp4'/>
             </div>
 
       </div>
