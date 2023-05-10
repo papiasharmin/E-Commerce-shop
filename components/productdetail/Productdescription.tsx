@@ -28,6 +28,7 @@ const Productdescription: React.FC<{img:{color:string;imgads:string[]};selectimg
     setshow(prev => !prev)
   }
 //comment for testing
+//comment for another-testing
   async function addtocart(){
     if(sizes && customerchoice.size === ''){
        setwarning('Please select a size!')
