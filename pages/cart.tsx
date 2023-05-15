@@ -12,7 +12,7 @@ const Cart: React.FC<{allpro:string}> = (props) => {
   const items:{id:string;quantity:number;totalprice:number}[] = useSelector((state:{cart:{cart:[]}})=> state.cart.cart);
   const total = useSelector((state:{cart:{totalamount:number}})=> state.cart.totalamount);
 
-
+//adding test comment
 useEffect(()=>{
   if(session){
     callapi(items,total,'updatecart')
