@@ -103,7 +103,7 @@ const Navbar: React.FC<{}>= () => {
     <>
     <div   className={`fixed z-10 w-full hover:bg-slate-100 text-slate-800 ${navcolor ? 'bg-slate-200' : ''}`}>
         <nav className='flex justify-evenly items-center md:flex-row parent md:justify-between center-center p-4 bg-transparent text-slate-800 hover:text-slate-800 font-sans'>
-            <Link href={`/`} className='relative text-2xl font-semibold flex justify-center items-center'><Image alt='' className='w-[70px] h-[35px]' src='/image/logo1.png' width={100} height={100}/>𝑅𝐸𝐿𝐼𝒜𝒩𝒞𝐸</Link>
+            <Link href={`/`} className='relative text-2xl font-semibold flex justify-center items-center'><Image alt='' className='w-[70px] h-[35px]' src='/image/mainlogo.png' width={100} height={100}/>iRESILIENCE</Link>
             <div className='hidden md:flex'>
               {navigator}
             </div>

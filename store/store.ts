@@ -70,9 +70,10 @@ const cartslice = createSlice({
 
         },
         deletecartitem(state,action){
+            //let itemleft = item.itemleft += action.payload.itemleft - item.itemleft ;
              let index 
              state.cart.map((item:any)=> {
-                if(item.id === action.payload.id && item.size == action.payload.size){
+                if(item.id === action.payload.id && item.size == action.payload.size && item.color === action.payload.color){
                     index = state.cart.indexOf(item)
                     state.totalamount -= item.totalprice
                 }

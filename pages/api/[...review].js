@@ -12,7 +12,7 @@ export default async function handler(
     const user = await db.collection(req.query.review?.[1]).findOne({name:req.query.review?.[2]});
     let rate = user.review.reduce((total,item)=> total + (+item.rating),0)
     rate = +(((rate + req.body.rate) / (user.review.length + 1)).toFixed(1))
-
+     console.log(rate)
     const revieexist = await db.collection(req.query.review?.[1]).findOne({name:req.query.review?.[2],"review.user": req.body.user})
     
     if(revieexist){

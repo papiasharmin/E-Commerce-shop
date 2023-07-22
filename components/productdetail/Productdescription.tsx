@@ -1,5 +1,5 @@
-import React,{useState, MouseEvent, ChangeEvent, useEffect}from 'react'
-import Rating from '../ui/rating/Rating'
+import React,{useState, MouseEvent, ChangeEvent, useEffect}from 'react';
+import Rating from '../ui/rating/Rating';
 import { cartaction } from '@/store/store';
 import {useSelector, useDispatch} from 'react-redux'
 import { useSession } from 'next-auth/react'
@@ -27,7 +27,8 @@ const Productdescription: React.FC<{img:{color:string;imgads:string[]};selectimg
   function toggleer(){
     setshow(prev => !prev)
   }
-
+//comment for testing
+//comment for another-testing
   async function addtocart(){
     if(sizes && customerchoice.size === ''){
        setwarning('Please select a size!')
@@ -85,6 +86,7 @@ const Productdescription: React.FC<{img:{color:string;imgads:string[]};selectimg
 
   useEffect(()=>{
     updatedbquantity(props.name,0,path[2])
+    console.log('helooo')
   },[])
 
   useEffect(()=>{

@@ -9,7 +9,7 @@ const Allreview: React.FC<{dbname:string;prorductname:string,review:{comment:str
    const [review,setreview] = useState('');
    const [rating,setrating] = useState(4);
    const [allow,setallow] = useState(false)
-   const [allreview,setallreview] = useState(props.review)
+   const [allreview,setallreview] = useState([])
    const reviewref = useRef<HTMLTextAreaElement>(null)
    const ratingref = useRef<HTMLInputElement>(null)
    const router = useRouter()
@@ -51,7 +51,7 @@ const Allreview: React.FC<{dbname:string;prorductname:string,review:{comment:str
   },[allreview]);
 
   let allreviewele
-  allreviewele = allreview?.map(item => <Customerreview key={item.comment} review={item}/>);
+  allreviewele = allreview ? allreview.map((item:{comment:string,rating:number,user:string,date:Date}) => <Customerreview key={item.comment} review={item}/>) : props.review.map(item => <Customerreview key={item.comment} review={item}/>);
   
   let reviewform = <>
       {!allow &&<><button className='rounded-md bg-slate-200 drop-shadow-md p-2' onClick={checksession}>Add Customer Review</button></>}
